@@ -1,0 +1,32 @@
+/* Dark mode styles for Twitter embed */
+.twitter-timeline-rendered {
+  background-color: #1a2235 !important;
+}
+
+.timeline-Widget {
+  background-color: #1a2235 !important;
+  color: #ffffff !important;
+}
+
+.timeline-Header {
+  background-color: #1a2235 !important;
+  border-bottom: 1px solid #2d3748 !important;
+}
+
+.timeline-Footer {
+  background-color: #1a2235 !important;
+  border-top: 1px solid #2d3748 !important;
+}
+
+.timeline-TweetList-tweet {
+  background-color: #1a2235 !important;
+  border-bottom: 1px solid #2d3748 !important;
+}
+
+.timeline-Body {
+  background-color: #1a2235 !important;
+}
+
+.SandboxRoot {
+  background-color: #1a2235 !important;
+}
