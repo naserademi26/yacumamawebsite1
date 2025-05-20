@@ -2,7 +2,6 @@
 
 import { DollarSign, Activity, Gift } from "lucide-react"
 import { AnimatedSnake } from "@/components/animated-snake"
-import { Button } from "@/components/ui/button"
 import { RoadmapSection } from "@/components/roadmap-section"
 import { FaqSection } from "@/components/faq-section"
 import { CountdownTimer } from "@/components/countdown-timer"
@@ -47,8 +46,6 @@ export default function Home() {
         <div className="w-full mb-8">
           <CountdownTimer />
         </div>
-
-        <Button className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg rounded-md">Get Ready</Button>
       </section>
 
       {/* Features Section */}
