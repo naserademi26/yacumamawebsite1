@@ -32,10 +32,6 @@ export function AnimatedCoinSnake() {
   const lastTimeRef = useRef<number>(0)
   const frameCountRef = useRef<number>(0)
   const containerRef = useRef<HTMLDivElement>(null)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
-  const [audioLoaded, setAudioLoaded] = useState(false)
-
-  // Fixed snake length - we'll keep this number of segments regardless of score
   const FIXED_SNAKE_LENGTH = 20
 
   // Meme coin types
@@ -143,7 +139,7 @@ export function AnimatedCoinSnake() {
       x: Math.floor(Math.random() * maxWidth) + 50,
       y: Math.floor(Math.random() * maxHeight) + 50,
       value: coinValue,
-      size: 40, // Fixed size for all coins
+      size: 30, // Changed from 40 to 30 (75% of original)
       eaten: false,
       type: randomType,
     }
@@ -219,9 +215,9 @@ export function AnimatedCoinSnake() {
     setSnake(newSnake)
   }
 
-  // Reset snake when score reaches 35
+  // Reset snake when score reaches 60
   useEffect(() => {
-    if (score >= 35) {
+    if (score >= 60) {
       // Show reset message
       setShowResetMessage(true)
 
@@ -258,14 +254,6 @@ export function AnimatedCoinSnake() {
         // Coin is eaten
         coinEaten = true
         setScore((prevScore) => prevScore + coin.value)
-
-        // Play coin collection sound
-        if (audioRef.current && audioLoaded) {
-          // Create a new Audio object each time to avoid issues with simultaneous playback
-          const sound = new Audio("/sounds/coin-collect.mp3")
-          sound.volume = 0.5 // Set volume to 50%
-          sound.play().catch((err) => console.error("Audio play failed:", err))
-        }
 
         // Increase speed slightly with each coin eaten
         setSpeed((prevSpeed) => Math.min(prevSpeed + 0.1, 10))
@@ -305,15 +293,6 @@ export function AnimatedCoinSnake() {
 
   return (
     <div ref={containerRef} className="fixed inset-0 pointer-events-none z-40 overflow-hidden">
-      {/* Audio element for coin collection sound */}
-      <audio
-        ref={audioRef}
-        src="/sounds/coin-collect.mp3"
-        preload="auto"
-        onCanPlayThrough={() => setAudioLoaded(true)}
-        onError={(e) => console.error("Audio failed to load:", e)}
-      />
-
       {/* Score display */}
       <div className="fixed top-4 right-4 bg-[#1a2235]/80 p-2 rounded-lg z-50 pointer-events-auto">
         <div className="flex items-center gap-2">
@@ -328,7 +307,7 @@ export function AnimatedCoinSnake() {
       {/* Reset message */}
       {showResetMessage && (
         <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500/80 text-white px-6 py-3 rounded-lg z-50 animate-bounce">
-          <p className="text-xl font-bold">Score: 35! Snake Reset! 🐍</p>
+          <p className="text-xl font-bold">Score: 60! Snake Reset! 🐍</p>
         </div>
       )}
 

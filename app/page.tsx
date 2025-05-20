@@ -11,7 +11,6 @@ import { SocialSection } from "@/components/social-section"
 import { MainNavigation } from "@/components/main-navigation"
 import { TeamSection } from "@/components/team-section"
 import { AnimatedCoinSnake } from "@/components/animated-coin-snake"
-import { VisitorCounter } from "@/components/visitor-counter"
 
 export default function Home() {
   return (
@@ -21,9 +20,6 @@ export default function Home() {
 
       {/* Animated Coin Snake */}
       <AnimatedCoinSnake />
-
-      {/* Visitor Counter */}
-      <VisitorCounter />
 
       {/* Hero Section */}
       <section id="home" className="container mx-auto px-4 pt-32 pb-16 flex flex-col items-center">

@@ -1,7 +1,4 @@
-import { Twitter, Send, Globe, MessageSquare } from "lucide-react"
-import { TwitterFeed } from "./twitter-feed"
-import { TelegramButton } from "./telegram-button"
-import { DiscordButton } from "./discord-button"
+import { Twitter, Send, Globe, MessageSquare, Zap } from "lucide-react"
 
 export function SocialSection() {
   return (
@@ -16,69 +13,104 @@ export function SocialSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Twitter Feed */}
-        <div className="lg:col-span-2">
-          <TwitterFeed username="yacumamameme" maxTweets={5} />
-        </div>
+      {/* Cool Social Media Showcase - Full Width */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Telegram Showcase - Simplified */}
+        <div className="bg-gradient-to-br from-[#0088cc]/20 to-[#1a2235] rounded-xl border border-[#0088cc]/30 p-6 flex flex-col h-full transform transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(0,136,204,0.3)]">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-full bg-[#0088cc]/20 flex items-center justify-center">
+              <Send className="w-6 h-6 text-[#0088cc]" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-white">Telegram</h3>
+              <p className="text-sm text-gray-400">@yacumamameme</p>
+            </div>
+          </div>
 
-        {/* Social Links */}
-        <div className="bg-[#1a2235] rounded-xl p-6 border border-gray-700 flex flex-col">
-          <h3 className="text-xl font-bold text-white mb-6">Connect With Us</h3>
-
-          <div className="space-y-4 flex-grow">
-            {/* Telegram */}
+          <div className="flex-grow flex items-center justify-center">
             <a
               href="https://t.me/Yacumamameme"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 bg-[#0088cc]/10 rounded-lg hover:bg-[#0088cc]/20 transition-colors"
+              className="py-3 px-6 bg-[#0088cc] text-white font-medium rounded-lg hover:bg-[#0088cc]/90 transition-colors flex items-center gap-2"
             >
-              <div className="w-10 h-10 rounded-full bg-[#0088cc]/20 flex items-center justify-center">
-                <Send className="w-5 h-5 text-[#0088cc]" />
-              </div>
-              <div>
-                <p className="font-medium text-white">Telegram</p>
-                <p className="text-sm text-gray-400">Join our community</p>
-              </div>
+              <Send className="w-5 h-5" />
+              Join Our Telegram
             </a>
+          </div>
+        </div>
 
-            {/* Discord */}
+        {/* Discord Showcase - Simplified */}
+        <div className="bg-gradient-to-br from-[#5865F2]/20 to-[#1a2235] rounded-xl border border-[#5865F2]/30 p-6 flex flex-col h-full transform transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(88,101,242,0.3)]">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-full bg-[#5865F2]/20 flex items-center justify-center">
+              <MessageSquare className="w-6 h-6 text-[#5865F2]" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-white">Discord</h3>
+              <p className="text-sm text-gray-400">Yacumama Community</p>
+            </div>
+          </div>
+
+          <div className="flex-grow flex items-center justify-center">
             <a
               href="https://discord.gg/Buw6bjgxxx"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 bg-[#5865F2]/10 rounded-lg hover:bg-[#5865F2]/20 transition-colors"
+              className="py-3 px-6 bg-[#5865F2] text-white font-medium rounded-lg hover:bg-[#5865F2]/90 transition-colors flex items-center gap-2"
             >
-              <div className="w-10 h-10 rounded-full bg-[#5865F2]/20 flex items-center justify-center">
-                <MessageSquare className="w-5 h-5 text-[#5865F2]" />
-              </div>
-              <div>
-                <p className="font-medium text-white">Discord</p>
-                <p className="text-sm text-gray-400">Chat with the community</p>
-              </div>
+              <MessageSquare className="w-5 h-5" />
+              Join Our Discord
             </a>
+          </div>
+        </div>
 
-            {/* Twitter/X */}
+        {/* Twitter/X Showcase - Simplified */}
+        <div className="bg-gradient-to-br from-gray-800/50 to-[#1a2235] rounded-xl border border-gray-700 p-6 flex flex-col h-full transform transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(29,161,242,0.2)]">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-full bg-[#1DA1F2]/10 flex items-center justify-center">
+              <Twitter className="w-6 h-6 text-[#1DA1F2]" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-white">Twitter/X</h3>
+              <p className="text-sm text-gray-400">@yacumamameme</p>
+            </div>
+          </div>
+
+          <div className="flex-grow flex items-center justify-center">
             <a
               href="https://x.com/yacumamameme"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors"
+              className="py-3 px-6 bg-[#1DA1F2] text-white font-medium rounded-lg hover:bg-[#1DA1F2]/90 transition-colors flex items-center gap-2"
             >
-              <div className="w-10 h-10 rounded-full bg-[#1DA1F2]/20 flex items-center justify-center">
-                <Twitter className="w-5 h-5 text-[#1DA1F2]" />
-              </div>
-              <div>
-                <p className="font-medium text-white">Twitter/X</p>
-                <p className="text-sm text-gray-400">@yacumamameme</p>
-              </div>
+              <Twitter className="w-5 h-5" />
+              Follow Us
             </a>
           </div>
+        </div>
 
-          <div className="mt-6 grid grid-cols-2 gap-4">
-            <TelegramButton variant="default" className="w-full" />
-            <DiscordButton variant="default" className="w-full" />
+        {/* Community Highlights */}
+        <div className="bg-gradient-to-br from-green-500/20 to-[#1a2235] rounded-xl border border-green-500/30 p-6 flex flex-col h-full transform transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(34,197,94,0.3)]">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+              <Zap className="w-6 h-6 text-green-400" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-white">Community Highlights</h3>
+            </div>
+          </div>
+
+          <div className="flex-grow">
+            <div className="bg-[#1a2235]/80 rounded-lg p-4 border border-green-500/20 mb-4">
+              <h4 className="text-lg font-bold text-green-400 mb-2">Weekly AMAs</h4>
+              <p className="text-gray-300">Join our weekly Ask Me Anything sessions with the team</p>
+            </div>
+
+            <div className="bg-[#1a2235]/80 rounded-lg p-4 border border-green-500/20">
+              <h4 className="text-lg font-bold text-green-400 mb-2">Exclusive Giveaways</h4>
+              <p className="text-gray-300">Active community members get access to regular token giveaways</p>
+            </div>
           </div>
         </div>
       </div>

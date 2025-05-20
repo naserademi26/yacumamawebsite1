@@ -91,6 +91,114 @@ body {
   background: #4b5563;
 }
 
+/* Cobra Walker Animation */
+.logo-container {
+  position: relative;
+  padding: 2px 4px;
+  overflow: visible;
+}
+
+.cobra-walker {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  z-index: 50;
+  animation: cobraWalk 6s infinite linear;
+}
+
+@keyframes cobraWalk {
+  0% {
+    transform: translateX(-60px);
+  }
+  100% {
+    transform: translateX(calc(100% + 60px));
+  }
+}
+
+@keyframes cobraBodyWalk {
+  0%,
+  100% {
+    d: path("M45,15 C40,10 35,13 30,15 S25,17 20,15 S15,13 10,15");
+  }
+  25% {
+    d: path("M45,15 C40,12 35,10 30,15 S25,20 20,15 S15,10 10,15");
+  }
+  50% {
+    d: path("M45,15 C40,20 35,17 30,15 S25,13 20,15 S15,17 10,15");
+  }
+  75% {
+    d: path("M45,15 C40,18 35,20 30,15 S25,10 20,15 S15,20 10,15");
+  }
+}
+
+@keyframes cobraTongueFlick {
+  0%,
+  40%,
+  60%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.5);
+  }
+}
+
+@keyframes cobraHeadBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes cobraCrownTilt {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes cobraShadowPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scaleX(1.1);
+  }
+}
+
+.cobra-body {
+  animation: cobraBodyWalk 2s infinite ease-in-out;
+}
+
+.cobra-tongue {
+  animation: cobraTongueFlick 0.5s infinite;
+  transform-origin: 49px 15px;
+}
+
+.cobra-head {
+  animation: cobraHeadBob 2s infinite ease-in-out;
+}
+
+.cobra-crown {
+  animation: cobraCrownTilt 2s infinite ease-in-out;
+}
+
+.cobra-shadow {
+  animation: cobraShadowPulse 2s infinite ease-in-out;
+}
+
 /* Snake Animation Keyframes */
 @keyframes slither {
   0% {
